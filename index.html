@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Егор Копылов — карточки товаров и инфографика для маркетплейсов</title>
+  <meta name="description" content="Дизайн карточек товаров и инфографики для Ozon, Wildberries, Avito и Яндекс Маркета. Визуал, который выделяется и продаёт.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Фоновые эффекты -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-scanlines" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--cyan" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--magenta" aria-hidden="true"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- Шапка -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo">
+        <span class="logo__bracket">[</span>
+        <span class="logo__text glitch" data-text="monk1Ne0N">monk1Ne0N</span>
+        <span class="logo__bracket">]</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#about" class="nav__link">// Обо мне</a>
+        <a href="#services" class="nav__link">// Услуги</a>
+        <a href="#works" class="nav__link">// Работы</a>
+        <a href="#process" class="nav__link">// Процесс</a>
+        <a href="#contact" class="nav__link nav__link--cta">Связаться</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content reveal">
+          <div class="hero__tag">
+            <span class="dot"></span>
+            SYSTEM ONLINE · ПРИНИМАЮ ЗАКАЗЫ
+          </div>
+          <h1 class="hero__title">
+            <span class="hero__line">Егор</span>
+            <span class="hero__line hero__line--accent glitch" data-text="Копылов">Копылов</span>
+          </h1>
+          <p class="hero__subtitle">
+            Создаю <strong>карточки товаров</strong> и <strong>инфографику</strong> для маркетплейсов.
+            Делаю визуал, который <span class="neon-text">выделяется</span> среди тысяч одинаковых карточек.
+          </p>
+          <div class="hero__platforms">
+            <span class="chip chip--ozon">Ozon</span>
+            <span class="chip chip--wb">Wildberries</span>
+            <span class="chip chip--avito">Avito</span>
+            <span class="chip chip--ym">Яндекс Маркет</span>
+          </div>
+          <div class="hero__actions">
+            <a href="https://t.me/monk1Ne0N" target="_blank" rel="noopener" class="btn btn--primary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9.04 15.59l-.38 5.3c.54 0 .77-.23 1.05-.51l2.52-2.41 5.22 3.82c.96.53 1.64.25 1.9-.88l3.44-16.1c.3-1.4-.5-1.95-1.44-1.6L1.96 10.53c-1.37.53-1.35 1.3-.23 1.64l5.17 1.61L18.9 6.16c.56-.37 1.08-.17.66.2L9.04 15.59z"/></svg>
+              Написать в Telegram
+            </a>
+            <a href="#works" class="btn btn--ghost">Смотреть работы</a>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal reveal--delay">
+          <div class="avatar-frame">
+            <div class="avatar-frame__corner avatar-frame__corner--tl"></div>
+            <div class="avatar-frame__corner avatar-frame__corner--tr"></div>
+            <div class="avatar-frame__corner avatar-frame__corner--bl"></div>
+            <div class="avatar-frame__corner avatar-frame__corner--br"></div>
+            <div class="avatar-frame__img">
+              <img src="img/avatar.png" alt="Егор Копылов" onerror="this.parentElement.classList.add('is-fallback')">
+              <div class="avatar-fallback"><span>ЕК</span></div>
+              <div class="avatar-frame__scan"></div>
+            </div>
+            <div class="avatar-frame__label">
+              <span class="mono">ID: EGOR_KOPYLOV</span>
+              <span class="mono">ROLE: DESIGNER</span>
+            </div>
+          </div>
+          <div class="hero__stat hero__stat--1">
+            <span class="hero__stat-num" data-count="200">0</span><span class="hero__stat-plus">+</span>
+            <span class="hero__stat-label">карточек создано</span>
+          </div>
+          <div class="hero__stat hero__stat--2">
+            <span class="hero__stat-num" data-count="4">0</span>
+            <span class="hero__stat-label">маркетплейса</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll">
+        <span></span>
+      </div>
+    </section>
+
+    <!-- Бегущая строка -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>КАРТОЧКИ ТОВАРОВ</span><i>◆</i>
+        <span>ИНФОГРАФИКА</span><i>◆</i>
+        <span>OZON</span><i>◆</i>
+        <span>WILDBERRIES</span><i>◆</i>
+        <span>AVITO</span><i>◆</i>
+        <span>ЯНДЕКС МАРКЕТ</span><i>◆</i>
+        <span>ВИЗУАЛ, КОТОРЫЙ ПРОДАЁТ</span><i>◆</i>
+        <span>КАРТОЧКИ ТОВАРОВ</span><i>◆</i>
+        <span>ИНФОГРАФИКА</span><i>◆</i>
+        <span>OZON</span><i>◆</i>
+        <span>WILDBERRIES</span><i>◆</i>
+        <span>AVITO</span><i>◆</i>
+        <span>ЯНДЕКС МАРКЕТ</span><i>◆</i>
+        <span>ВИЗУАЛ, КОТОРЫЙ ПРОДАЁТ</span><i>◆</i>
+      </div>
+    </div>
+
+    <!-- ОБО МНЕ -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__num mono">01</span>
+          <h2 class="section__title">Обо <span class="neon-text">мне</span></h2>
+        </div>
+        <div class="about__grid">
+          <div class="about__text reveal">
+            <p class="about__lead">
+              Привет! Я Егор — дизайнер, который превращает обычные фото товара
+              в карточки, на которые хочется кликнуть.
+            </p>
+            <p>
+              Покупатель на маркетплейсе принимает решение за <strong>2–3 секунды</strong>.
+              За это время карточка должна зацепить взгляд, объяснить выгоды
+              и вызвать доверие. Именно это я и делаю: чистая композиция,
+              читаемые преимущества, акценты на том, что важно клиенту.
+            </p>
+            <p>
+              Работаю с любыми категориями — от автотоваров и электроники
+              до косметики и товаров для дома. Знаю требования каждой площадки
+              и адаптирую макеты под их форматы.
+            </p>
+          </div>
+          <div class="about__cards">
+            <div class="feature reveal">
+              <div class="feature__icon">⚡</div>
+              <h3>Быстро</h3>
+              <p>Первые варианты — в течение 1–2 дней. Правки оперативно.</p>
+            </div>
+            <div class="feature reveal reveal--delay">
+              <div class="feature__icon">🎯</div>
+              <h3>Под площадку</h3>
+              <p>Учитываю правила и размеры Ozon, WB, Avito и Яндекс Маркета.</p>
+            </div>
+            <div class="feature reveal">
+              <div class="feature__icon">📈</div>
+              <h3>На результат</h3>
+              <p>Визуал строю вокруг выгод покупателя — чтобы рос CTR и продажи.</p>
+            </div>
+            <div class="feature reveal reveal--delay">
+              <div class="feature__icon">🧩</div>
+              <h3>Под ключ</h3>
+              <p>Главное фото, слайды с инфографикой, rich-контент — всё в едином стиле.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- УСЛУГИ -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__num mono">02</span>
+          <h2 class="section__title">Что я <span class="neon-text neon-text--magenta">делаю</span></h2>
+        </div>
+        <div class="services__grid">
+          <article class="service reveal">
+            <span class="service__num mono">/01</span>
+            <h3>Главное фото карточки</h3>
+            <p>Обложка товара, которая выделяется в выдаче и собирает клики. Акцентный заголовок, выгоды, чистый фон.</p>
+            <ul>
+              <li>Композиция под мобильную выдачу</li>
+              <li>Плашки с УТП и преимуществами</li>
+              <li>Соответствие требованиям площадки</li>
+            </ul>
+          </article>
+          <article class="service service--featured reveal reveal--delay">
+            <span class="service__badge">Популярно</span>
+            <span class="service__num mono">/02</span>
+            <h3>Инфографика для слайдов</h3>
+            <p>Серия слайдов, которая раскрывает товар: характеристики, комплектация, сценарии использования, сравнение.</p>
+            <ul>
+              <li>5–10 слайдов в едином стиле</li>
+              <li>Иконки, схемы, размеры, выноски</li>
+              <li>Закрытие возражений покупателя</li>
+            </ul>
+          </article>
+          <article class="service reveal">
+            <span class="service__num mono">/03</span>
+            <h3>Rich-контент и баннеры</h3>
+            <p>Оформление описания товара, баннеры для магазина и акций, визуал для бренд-зоны на Ozon и WB.</p>
+            <ul>
+              <li>Rich-контент для Ozon</li>
+              <li>Баннеры и шапки магазина</li>
+              <li>Адаптация под Avito и Яндекс Маркет</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- РАБОТЫ -->
+    <section class="section works" id="works">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__num mono">03</span>
+          <h2 class="section__title">Мои <span class="neon-text">работы</span></h2>
+          <p class="section__desc">Нажми на карточку, чтобы рассмотреть ближе</p>
+        </div>
+
+        <div class="works__grid">
+          <figure class="work reveal" data-title="Манометр Arnezi" data-desc="Главное фото карточки · автотовары">
+            <div class="work__img">
+              <img src="img/work-1.jpg" alt="Карточка товара: манометр универсальный" loading="lazy" onerror="this.parentElement.classList.add('is-fallback')">
+              <div class="work__fallback"><span>01</span></div>
+            </div>
+            <figcaption class="work__caption">
+              <span class="work__cat mono">Главное фото · Автотовары</span>
+              <h3>Манометр Arnezi</h3>
+            </figcaption>
+            <div class="work__frame"></div>
+          </figure>
+
+          <figure class="work reveal reveal--delay" data-title="Работа 02" data-desc="Инфографика для карточки товара">
+            <div class="work__img">
+              <img src="img/work-2.jpg" alt="Инфографика для карточки товара" loading="lazy" onerror="this.parentElement.classList.add('is-fallback')">
+              <div class="work__fallback"><span>02</span></div>
+            </div>
+            <figcaption class="work__caption">
+              <span class="work__cat mono">Инфографика</span>
+              <h3>Слайд карточки</h3>
+            </figcaption>
+            <div class="work__frame"></div>
+          </figure>
+
+          <figure class="work reveal" data-title="Работа 03" data-desc="Инфографика для карточки товара">
+            <div class="work__img">
+              <img src="img/work-3.jpg" alt="Инфографика для карточки товара" loading="lazy" onerror="this.parentElement.classList.add('is-fallback')">
+              <div class="work__fallback"><span>03</span></div>
+            </div>
+            <figcaption class="work__caption">
+              <span class="work__cat mono">Инфографика</span>
+              <h3>Слайд карточки</h3>
+            </figcaption>
+            <div class="work__frame"></div>
+          </figure>
+
+          <figure class="work reveal reveal--delay" data-title="Работа 04" data-desc="Главное фото карточки">
+            <div class="work__img">
+              <img src="img/work-4.jpg" alt="Карточка товара" loading="lazy" onerror="this.parentElement.classList.add('is-fallback')">
+              <div class="work__fallback"><span>04</span></div>
+            </div>
+            <figcaption class="work__caption">
+              <span class="work__cat mono">Главное фото</span>
+              <h3>Карточка товара</h3>
+            </figcaption>
+            <div class="work__frame"></div>
+          </figure>
+
+          <figure class="work reveal" data-title="Работа 05" data-desc="Главное фото карточки">
+            <div class="work__img">
+              <img src="img/work-5.jpg" alt="Карточка товара" loading="lazy" onerror="this.parentElement.classList.add('is-fallback')">
+              <div class="work__fallback"><span>05</span></div>
+            </div>
+            <figcaption class="work__caption">
+              <span class="work__cat mono">Главное фото</span>
+              <h3>Карточка товара</h3>
+            </figcaption>
+            <div class="work__frame"></div>
+          </figure>
+
+          <figure class="work reveal reveal--delay" data-title="Работа 06" data-desc="Инфографика для карточки товара">
+            <div class="work__img">
+              <img src="img/work-6.jpg" alt="Инфографика для карточки товара" loading="lazy" onerror="this.parentElement.classList.add('is-fallback')">
+              <div class="work__fallback"><span>06</span></div>
+            </div>
+            <figcaption class="work__caption">
+              <span class="work__cat mono">Инфографика</span>
+              <h3>Слайд карточки</h3>
+            </figcaption>
+            <div class="work__frame"></div>
+          </figure>
+        </div>
+
+        <div class="works__more reveal">
+          <p>Больше работ и свежие кейсы — в Telegram</p>
+          <a href="https://t.me/monk1Ne0N" target="_blank" rel="noopener" class="btn btn--ghost">Запросить портфолио</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПРОЦЕСС -->
+    <section class="section process" id="process">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__num mono">04</span>
+          <h2 class="section__title">Как мы <span class="neon-text neon-text--magenta">работаем</span></h2>
+        </div>
+        <div class="timeline">
+          <div class="step reveal">
+            <div class="step__marker mono">01</div>
+            <h3>Бриф</h3>
+            <p>Вы присылаете фото товара, ссылку на карточку или описание. Обсуждаем задачу, аудиторию и конкурентов.</p>
+          </div>
+          <div class="step reveal reveal--delay">
+            <div class="step__marker mono">02</div>
+            <h3>Концепт</h3>
+            <p>Делаю главное фото в 1–2 вариантах. Согласовываем стиль, цвета и подачу выгод.</p>
+          </div>
+          <div class="step reveal">
+            <div class="step__marker mono">03</div>
+            <h3>Инфографика</h3>
+            <p>Собираю остальные слайды в едином стиле. Вношу правки — они входят в стоимость.</p>
+          </div>
+          <div class="step reveal reveal--delay">
+            <div class="step__marker mono">04</div>
+            <h3>Сдача</h3>
+            <p>Отдаю файлы в нужных размерах под каждую площадку. Готово к загрузке.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact__box reveal">
+          <div class="contact__glow"></div>
+          <span class="section__num mono">05</span>
+          <h2 class="contact__title">Готов обсудить <span class="neon-text">твой проект</span></h2>
+          <p class="contact__text">
+            Напиши в Telegram — расскажи о товаре, и я предложу, как сделать карточку заметнее.
+            Отвечаю быстро.
+          </p>
+          <a href="https://t.me/monk1Ne0N" target="_blank" rel="noopener" class="btn btn--primary btn--lg">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M9.04 15.59l-.38 5.3c.54 0 .77-.23 1.05-.51l2.52-2.41 5.22 3.82c.96.53 1.64.25 1.9-.88l3.44-16.1c.3-1.4-.5-1.95-1.44-1.6L1.96 10.53c-1.37.53-1.35 1.3-.23 1.64l5.17 1.61L18.9 6.16c.56-.37 1.08-.17.66.2L9.04 15.59z"/></svg>
+            @monk1Ne0N
+          </a>
+          <div class="contact__meta mono">
+            <span>&gt; status: available</span>
+            <span>&gt; response_time: &lt; 1h</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="mono">© <span id="year">2026</span> Егор Копылов</span>
+      <span class="mono footer__tag">designed with neon &amp; caffeine</span>
+      <a href="https://t.me/monk1Ne0N" target="_blank" rel="noopener" class="mono footer__link">t.me/monk1Ne0N</a>
+    </div>
+  </footer>
+
+  <!-- Лайтбокс -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Закрыть">✕</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Предыдущая">‹</button>
+    <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Следующая">›</button>
+    <figure class="lightbox__figure">
+      <img src="" alt="" id="lightboxImg">
+      <figcaption>
+        <h3 id="lightboxTitle"></h3>
+        <p id="lightboxDesc" class="mono"></p>
+      </figcaption>
+    </figure>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

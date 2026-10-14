@@ -1,16 +1,33 @@
-## Hi there 👋
+# Сайт-портфолио — Егор Копылов
 
-<!--
-**Egoronte/Egoronte** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## Как добавить свои фото
 
-Here are some ideas to get you started:
+Положи изображения в папку `img/` с такими именами:
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+| Файл            | Что это                                   |
+|-----------------|-------------------------------------------|
+| `avatar.png`    | Твоё фото (первое фото из переписки)      |
+| `work-1.jpg`    | Карточка «Манометр Arnezi»                |
+| `work-2.jpg`    | Работа №2                                 |
+| `work-3.jpg`    | Работа №3                                 |
+| `work-4.jpg`    | Работа №4                                 |
+| `work-5.jpg`    | Работа №5                                 |
+| `work-6.jpg`    | Работа №6                                 |
+
+Пок�� картинки не добавлены, на их месте показываются неоновые заглушки —
+сайт не ломается.
+
+Чтобы добавить больше работ — скопируй любой блок `<figure class="work">`
+в `index.html` и поменяй путь к картинке, подпись и `data-title` / `data-desc`.
+
+## Запуск
+
+Просто открой `index.html` в браузере. Для публикации подойдёт
+GitHub Pages, Netlify, Vercel, Tilda (как zip-архив) или любой хостинг.
+
+## Структура
+
+- `index.html` — разметка
+- `style.css`  — стили (неон, глитч, сетка, анимации)
+- `script.js`  — частицы, лайтбокс, меню, счётчики
+- `img/`       — твои изображения
